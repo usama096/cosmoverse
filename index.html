@@ -1,53 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #FF7F50, #FF6347, #FF4500, #FF0000);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            margin: 0;
-            color: white;
-        }
-        h1 {
-            font-size: 2.5em;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-            text-align: center;
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>🌟K🌟</title>
+	<style>
+		body {
+			font-family: 'Comic Sans MS', cursive, sans-serif;
+			background: linear-gradient(135deg, #FF7F50, #FF6347, #FF4500, #FF0000);
+			background-size: 400% 400%;
+			animation: gradient 15s ease infinite;
+			margin: 0;
+			color: white;
+			overflow: hidden;
+		}
+
+		#main-sec {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 70vh;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 3em;
+			text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+			animation: fadeIn 2s ease-in-out;
+			white-space: nowrap;
+		}
+
+		#day {
+			font-size: 1.5em;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			text-align: center;
+			margin-top: 20px;
+		}
+		#date-info{
+			text-align: center;
+		}
+
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+
+	</style>
 </head>
+
 <body>
-    <script>
-        const messages = [
-	    "Hello, Kaynaat! 🌹",
-            "You're an amazing person! 🌟",
-            "Keep up the great work! 🤩",
-            "You're doing fantastic! 🎉",
-            "Don't forget to take breaks! ☕",
-            "You're incredible! 🌈"
-        ];
+	<div id="day"></div>
+	<div id="date-info"></div>
+	<div id="main-sec"></div>
+	<script>
+		const messages = [
+			"Hello, Kaynaat! 🌹",
+			"You're an amazing person! 🌟",
+			"Keep up the great work! 🤩",
+			"You're doing fantastic! 🎉",
+			"Don't forget to take breaks! ☕",
+			"You're incredible! 🌈"
+		];
 
-        function displayMessage(index) {
-            if (index < messages.length) {
-                document.body.innerHTML = `<h1>${messages[index]}</h1>`;
-                setTimeout(() => displayMessage(index + 1), 2500);
-            }
-        }
-
-        displayMessage(0);
-    </script>
+		function displayMessage(index) {
+			if (index < messages.length) {
+				document.getElementById('main-sec').innerHTML = `<h1>${messages[index]}</h1>`;
+				setTimeout(() => displayMessage(index + 1), 2500);
+			}
+		}
+		displayMessage(0);
+		const startDate = new Date('2024-07-24');
+		function displayDateInfo() {
+			const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+			const today = new Date();
+			const formattedDate = today.toLocaleDateString('en-US', options);
+			document.getElementById('date-info').innerHTML = formattedDate;
+		}
+		displayDateInfo();
+		function getDaysSinceStart(start) {
+			const currentDate = new Date();
+			const timeDifference = currentDate - start;
+			const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+			return daysDifference;
+		}
+		const currentValue = getDaysSinceStart(startDate);
+		document.getElementById('day').innerHTML = 'Day ' + currentValue;
+	</script>
 </body>
+
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheer Up Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const messages = [
+            "You're amazing!",
+            "Keep up the great work!",
+            "You're doing fantastic!",
+            "Don't forget to take breaks!",
+            "You're rocking it!"
+        ];
+
+        function displayMessage(index) {
+            if (index < messages.length) {
+                document.body.innerHTML = `<h1>${messages[index]}</h1>`;
+                setTimeout(() => displayMessage(index + 1), 1000);
+            }
+        }
+
+        displayMessage(0);
+    </script>
+</body>
+</html>

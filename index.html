@@ -11,25 +11,39 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            background: linear-gradient(135deg, #FF7F50, #FF6347, #FF4500, #FF0000);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            margin: 0;
+            color: white;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
             text-align: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
     </style>
 </head>
 <body>
     <script>
         const messages = [
-            "You're amazing!",
-            "Keep up the great work!",
-            "You're doing fantastic!",
-            "Don't forget to take breaks!",
-            "You're rocking it!"
+			"Hello, Kaynaat!",
+            "You're an amazing person! 🌟",
+            "Keep up the great work! 🤩",
+            "You're doing fantastic! 🎉",
+            "Don't forget to take breaks! ☕",
+            "You're incredible! 🌈"
         ];
 
         function displayMessage(index) {
             if (index < messages.length) {
                 document.body.innerHTML = `<h1>${messages[index]}</h1>`;
-                setTimeout(() => displayMessage(index + 1), 1000);
+                setTimeout(() => displayMessage(index + 1), 2500);
             }
         }
 

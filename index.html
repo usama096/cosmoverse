@@ -95,9 +95,7 @@
     <script>
         const messages = [
             "Hi, Kaynaat! 🌹",
-            "You're a kind person! 🌟",
-            "I just wanted to say that: 😔",
-            "<img src ='https://cdn.pixabay.com/photo/2024/05/20/08/46/ai-generated-8774249_1280.jpg'>"
+            "<div><img id='image' src='https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?q=80&w=1386&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'><h1 id='thank-you' display='none'>Thank you!</h1></div>"
         ];
 
         function displayMessage(index) {
@@ -123,6 +121,9 @@
         }
         const currentValue = getDaysSinceStart(startDate);
         document.getElementById('day').innerHTML = 'Day ' + currentValue;
+        document.getElementById('image').onload = function () {
+            document.getElementById('thank-you').style.display = 'block';
+        };
     </script>
 </body>
 

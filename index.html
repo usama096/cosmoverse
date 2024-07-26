@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(135deg, #FF7F50, #FF6347, #FF4500, #FF0000);
+            background: linear-gradient(135deg, #7CFC00, #32CD32, #228B22, #006400);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             margin: 0;
@@ -18,21 +18,23 @@
 
         #main-sec {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 70vh;
             text-align: center;
+            padding: 0 10px;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
             animation: fadeIn 2s ease-in-out;
-            white-space: nowrap;
+            margin: 0;
         }
 
         #day {
-            font-size: 1.5em;
+            font-size: 1.2em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             text-align: center;
             margin-top: 20px;
@@ -40,12 +42,16 @@
 
         #date-info {
             text-align: center;
+            margin-top: 10px;
+            font-size: 1em;
         }
 
         img {
-            width: 260px;
-            height: 260px;
+            width: 90%;
+            max-width: 450px;
+            height: auto;
             border-radius: 16px;
+            margin-top: 20px;
         }
 
         @keyframes gradient {
@@ -59,6 +65,24 @@
 
             100% {
                 background-position: 0% 50%;
+            }
+        }
+
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            #day {
+                font-size: 1.5em;
+            }
+
+            #date-info {
+                font-size: 1.2em;
+            }
+
+            img {
+                width: 260px;
             }
         }
     </style>

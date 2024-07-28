@@ -95,14 +95,17 @@
     </div>
     <script>
         const messages = [
-            "Hi, Dear! 🌹",
-            "<div><img id='image' src='./assets/flower.png'><h1>Thank you!</h1></div>"
+            "Hello, Kaynaat! 🌹",
+            "I hope you are having good conversation with your friend 😊",
+            "Someone was pretending to be angry with you but he was not at all.",
+            "It's hard for him to be angry with you 😃",
+            "<blockquote>\"Keep smiling! Your smile is the best, and it brightens up everything 😍\"<br><br> ~Usama</blockquote>"
         ];
 
         function displayMessage(index) {
             if (index < messages.length) {
                 document.getElementById('main-sec').innerHTML = `<h1>${messages[index]}</h1>`;
-                setTimeout(() => displayMessage(index + 1), 2500);
+                setTimeout(() => displayMessage(index + 1), 3000);
             }
         }
         displayMessage(0);
